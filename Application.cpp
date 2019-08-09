@@ -1,7 +1,5 @@
 #include "Application.h"
-
 #include "Display.h"
-
 #include "States/Playing.h"
 
 Application::Application()
