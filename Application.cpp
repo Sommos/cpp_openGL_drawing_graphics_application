@@ -4,30 +4,43 @@
 
 Application::Application()
 {
-    pushState(std::make_unique<State::Playing>(*this));
+    // push an instance of the "Playing" state onto the stack of game states
+    pushState(std::make_unique<State::Playing>(*this)); 
 }
 
+// the main game loop
 void Application::runMainGameLoop()
 {
-    while (Display::isOpen())
+    // loop until the display is closed
+    while (Display::isOpen()) 
     {
-        Display::clear();
+        // clear the display
+        Display::clear(); 
 
-        m_states.top()->input();
-        m_states.top()->update();
-        m_states.top()->draw();
+        // handle input for the current state
+        m_states.top()->input(); 
+        // update the current state
+        m_states.top()->update(); 
+        // draw the current state
+        m_states.top()->draw(); 
 
+        // update the display
         Display::update();
-        Display::checkForClose();
+        // check if the display should be closed
+        Display::checkForClose(); 
     }
 }
 
+// push a new game state onto the stack
 void Application::pushState(std::unique_ptr<State::Game_State> state)
 {
-    m_states.push(std::move(state));
+    // move the ownership of the state object into the stack of game states
+    m_states.push(std::move(state)); 
 }
 
+// pop the top game state from the stack
 void Application::popState()
 {
-    m_states.pop();
+    // remove the top game state from the stack
+    m_states.pop(); 
 }
