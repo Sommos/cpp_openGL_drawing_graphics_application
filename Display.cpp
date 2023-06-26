@@ -8,42 +8,51 @@ namespace Display
     // width and height variables for the current window
     constexpr static int WIDTH = 1280;
     constexpr static int HEIGHT = 720;
+
     // pointer for RenderWindow object
     std::unique_ptr<sf::RenderWindow> window;
 
+    // initialize the display
     void init()
     {
-        // bit depth setting and version of OpenGL in use
+        // configure the context settings for OpenGL
         sf::ContextSettings settings;
         settings.depthBits = 24;
         settings.majorVersion = 3;
-        settings.minorVersion = 3; //OpenGL 3.3
-        // render the window at the size variables above
+        settings.minorVersion = 3; // OpenGL 3.3
+
+        // create the SFML window with the specified width, height, title, style, and settings
         window = std::make_unique<sf::RenderWindow>(sf::VideoMode(WIDTH, HEIGHT), "Window", sf::Style::Close, settings);
+
+        // initialize GLEW
         glewInit();
+
+        // set the viewport to cover the entire window
         glViewport(0, 0, WIDTH, HEIGHT);
     }
-    
-    // method that allows the user to close the current display window
+
+    // close the display window
     void close()
     {
         window->close();
     }
 
-    // method to clear the current display window and set to a colour
+    // clear the display window with a specified color
     void clear()
     {
-        glClearColor(0.0, 0.0, 0.0, 1.0);
-        glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+        // set the clear color to black
+        glClearColor(0.0, 0.0, 0.0, 1.0); 
+        // clear the depth and color buffers
+        glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT); 
     }
 
-    // method to update the current display window
+    // update the display window
     void update()
     {
         window->display();
     }
 
-    // method to check if the current window is closed
+    // check if the display window should be closed
     void checkForClose()
     {
         sf::Event e;
@@ -56,7 +65,7 @@ namespace Display
         }
     }
 
-    // method to check if the current window is open
+    // check if the display window is open
     bool isOpen()
     {
         return window->isOpen();
