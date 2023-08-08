@@ -10,7 +10,8 @@ namespace Display
     constexpr static int HEIGHT = 720;
 
     // pointer for RenderWindow object
-    std::unique_ptr<sf::RenderWindow> window;
+    std::unique_ptr<sf::Window> window;
+
 
     // initialize the display
     void init()
@@ -22,7 +23,7 @@ namespace Display
         settings.minorVersion = 3; // OpenGL 3.3
 
         // create the SFML window with the specified width, height, title, style, and settings
-        window = std::make_unique<sf::RenderWindow>(sf::VideoMode(WIDTH, HEIGHT), "Window", sf::Style::Close, settings);
+        window = std::make_unique<sf::Window>(sf::VideoMode(WIDTH, HEIGHT), "Window", sf::Style::Close, settings);
 
         // initialize GLEW
         glewInit();

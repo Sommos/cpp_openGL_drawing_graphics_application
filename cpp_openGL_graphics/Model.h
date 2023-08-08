@@ -2,7 +2,6 @@
 #define MODEL_H_INCLUDED
 
 #include <GL/glew.h>
-
 #include <vector>
 
 class Model
