@@ -19,15 +19,15 @@
     <Filter Include="Resource Files\Shaders">
       <UniqueIdentifier>{5139946f-3d67-40c9-aba6-26b2ec3279ac}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{5dc2ed7a-fcd0-4fa6-aeb3-d59b6670d5dc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Display.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Model.cpp">
@@ -44,6 +44,9 @@
     </ClCompile>
     <ClCompile Include="States\Playing.cpp">
       <Filter>Resource Files\Game States</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
