@@ -3,10 +3,12 @@
 
 #include <GL/glew.h>
 #include <string>
+#include <fstream>
+#include <sstream>
+#include <stdexcept>
 
 namespace Shader
 {
     GLuint loadShader(const std::string& vertexShaderFile, const std::string& fragmentShaderFile);
 }
-
-#endif // SHADER_LOADER_H_INCLUDED
+#endif

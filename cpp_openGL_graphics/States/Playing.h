@@ -2,7 +2,7 @@
 #define PLAYING_H_INCLUDED
 
 #include "Game_State.h"
-
+#include <iostream>
 #include "../Model.h"
 
 class Application;
@@ -22,5 +22,4 @@ namespace State
             Model m_model;
     };
 }
-
-#endif // PLAYING_H_INCLUDED
+#endif

@@ -19,4 +19,4 @@ namespace State
     };
 }
 
-#endif // GAME_STATE_H_INCLUDED
+#endif

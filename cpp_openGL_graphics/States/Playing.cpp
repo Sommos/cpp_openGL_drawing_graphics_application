@@ -1,17 +1,8 @@
 #include "Playing.h"
 
-#include <iostream>
-
 namespace State
 {
-    Playing::Playing(Application& application)
-    :   Game_State (application)
-    ,   m_model    ({0.5, 0.5,
-                     -0.5, 0.5,
-                     -0.5, -0.5,
-                     -0.5, -0.5,
-                     0.5, -0.5,
-                     0.5, 0.5})
+    Playing::Playing(Application& application) : Game_State (application), m_model ({0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5,0.5, -0.5,0.5, 0.5})
     {
 
     }
